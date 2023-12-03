@@ -1,0 +1,13 @@
+1-npm init -y
+
+2-node app
+
+3-//Instalar servidor express y las variables de entorno dotenv
+npm i express dotenv
+
+4-Configurar variables de entorno--poner puerto 8080
+
+5- En app configurar puerto
+
+
+npm install mongoose --save
