@@ -36,17 +36,15 @@ const UsuarioSchema=Schema({
 UsuarioSchema.pre('save', function (next) {
     const user = this;
   
-    // Solo encriptar la contraseña si ha sido modificada o es nueva
     if (!user.isModified('password')) return next();
   
-    // Generar un "salt" y encriptar la contraseña
     bcrypt.genSalt(10, (err, salt) => {
       if (err) return next(err);
   
       bcrypt.hash(user.password, salt, (err, hash) => {
         if (err) return next(err);
   
-        // Reemplazar la contraseña con la versión encriptada
+        
         user.password = hash;
         next();
       });

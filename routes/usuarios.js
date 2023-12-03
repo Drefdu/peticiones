@@ -2,7 +2,7 @@ const {Router}= require('express')
 const { usuariosGet, usuariosPut, usuariosPost, usuariosDelete, usuariosPatch } = require('../controllers/usuarios')
 const router = Router()
 
-/*this.app.get('/', (req, res) => { // Corrección: usa this.app en lugar de app
+/*this.app.get('/', (req, res) => { 
     res.send('Hello World')
 })*/
 
