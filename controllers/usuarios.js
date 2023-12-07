@@ -46,22 +46,14 @@ const usuariosPut = async (req, res = response) => {
 };
 
 const usuariosPost = async (req, res = response) => {
-    const { nombre, correo, password } = req.body;
+    const usuario = new Usuarios(req.body);
 
     try {
-        const nuevoUsuario = new Usuario({
-            nombre,
-            correo,
-            password,
-            rol: 'USER_ROL' 
-        });
-
-        await nuevoUsuario.save();
-
+        await usuario.save();
         res.json({
             ok: true,
             msg: 'Usuario creado exitosamente',
-            usuario: nuevoUsuario
+            usuario
         });
     } catch (error) {
         console.error(error);
